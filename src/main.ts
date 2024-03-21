@@ -3,14 +3,9 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 
 @Component({
-  selector: 'app-root',
+  selector: '[main]',
   standalone: true,
-  template: `
-    <h1 class="font-bold text-red">Hello world!</h1>
-    <a class="underline hover:text-blue-600" target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
-  `,
+  templateUrl: './main.html',
 })
 export class App {}
 
