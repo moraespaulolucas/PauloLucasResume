@@ -1,4 +1,36 @@
-<h1 class="font-bold text-red">Hello world!</h1>
-<a class="underline hover:text-blue-600" target="_blank" href="https://angular.dev/overview">
-    Learn more about Angular
-</a>
+<header class="fixed w-full h-[19dvh]">
+    <nav class="h-full flex justify-between items-center py-2 px-8">
+        <a href="/">PL</a>
+        <button>III</button>
+    </nav>
+</header>
+
+<main class="h-[95dvh] py-2 px-10 grid grid-rows-5 text-center">
+    <div class="row-span-3 row-start-2 flex flex-col justify-center">
+        <h1 class="text-5xl">{{personalInfo.fullName}}</h1>
+        <h2 class="text-2xl">{{personalInfo.title}}</h2>
+        <div class="flex justify-center gap-2">
+            <i>A</i>
+            <i>R</i>
+            <i>V</i>
+            <i>T</i>
+            <i>J</i>
+            <i>C</i>
+        </div>
+    </div>
+    <article class="row-start-5 flex items-center justify-center">
+        <p><i>Make it simple. Make it useful. Make it right</i></p>
+    </article>
+</main>
+
+<section class="h-[95dvh] py-2 px-10 grid grid-rows-5 bg-red-100">
+    <p>Section</p>
+</section>
+
+<section class="h-[95dvh] py-2 px-10 grid grid-rows-5 bg-blue-100">
+    <p>Section</p>
+</section>
+
+<footer class="h-[95dvh] py-2 px-10 grid grid-rows-5">
+    <p>Footer</p>
+</footer>
