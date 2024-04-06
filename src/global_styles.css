@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body::-webkit-scrollbar {
+main::-webkit-scrollbar {
     display: none;
-} */
+}
+
+main {
+    -ms-overflow-style: none;
+}
+
+main {
+    scrollbar-width: none;
+}

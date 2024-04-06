@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    container : {
+      center: true
+    },
     extend: {
       colors: {
         current: 'currentcolor'
@@ -16,6 +19,10 @@ module.exports = {
       },
       animation: {
         blinking: "blink 1s step-end infinite"
+      },
+      screens: {
+        '2xs': '384px',
+        'xs': '512px',
       }
     },
   },
