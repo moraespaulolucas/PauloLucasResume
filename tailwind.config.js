@@ -7,6 +7,14 @@ module.exports = {
     container : {
       center: true
     },
+    screens: {
+      '2xs': '384px',
+      'xs': '512px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
     extend: {
       colors: {
         current: 'currentcolor'
@@ -19,10 +27,6 @@ module.exports = {
       },
       animation: {
         blinking: "blink 1s step-end infinite"
-      },
-      screens: {
-        '2xs': '384px',
-        'xs': '512px',
       }
     },
   },
