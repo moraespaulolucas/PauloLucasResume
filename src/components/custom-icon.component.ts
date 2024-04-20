@@ -1,32 +1,32 @@
 import { CommonModule } from "@angular/common";
-import { AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { SafeHtml } from "@angular/platform-browser";
 import { FontAwesomeModule, FaIconComponent } from "@fortawesome/angular-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 
 interface SafeHtmlImpl extends SafeHtml {
-    [key:string]: HTMLElement
+    changingThisBreaksApplicationSecurity: string
 }
 
 @Component({
-    selector: 'i.fa-icon',
+    selector: '.fa-icon',
     standalone: true,
-    template: `
-        <fa-icon #icon [icon]="faCoffee"></fa-icon>
-        
-        `,
+    template: `@if (iconPrefix && iconName) {<fa-icon #icon [icon]="[iconPrefix, iconName]"></fa-icon>}`,
     imports: [FontAwesomeModule, CommonModule],
 })
 export class CustomIconComponent implements AfterViewInit {
-    @ViewChild('icon') faIconComponent!: FaIconComponent
-    
-    faCoffee = faCoffee;
-    
-    safeElement !: SafeHtmlImpl
-    element !: HTMLElement
+    constructor(private elementRef: ElementRef) {}
+
+    @ViewChild('icon') faIconComponent!: FaIconComponent;
+    @Input() iconPrefix?: IconPrefix
+    @Input() iconName?: IconName
 
     ngAfterViewInit(): void {
-        this.safeElement = this.faIconComponent.renderedIconHTML as SafeHtmlImpl
-        this.element = this.safeElement[Object.keys(this.safeElement)[0]];
+        if (this.iconPrefix && this.iconName) {
+            const safeElement = this.faIconComponent.renderedIconHTML as SafeHtmlImpl
+            const element = safeElement.changingThisBreaksApplicationSecurity;
+            const customIconComponentElement = this.elementRef.nativeElement as HTMLElement
+            customIconComponentElement.innerHTML = element
+        }
     }
 }
