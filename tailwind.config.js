@@ -16,7 +16,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        current: 'currentcolor'
+        current: 'currentcolor',
+        'special-blue': '#0a1e5b',
+        'special-red': '#cf2f3e',
+        'special-white': '#f8f9fa',
+        'special-black': '#3d3d3d'
       },
       keyframes: {
         blink: {

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 main::-webkit-scrollbar {
     display: none;
@@ -8,8 +9,11 @@ main::-webkit-scrollbar {
 
 main {
     -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-main {
-    scrollbar-width: none;
+@layer base {
+    body {
+        @apply text-special-black bg-special-white
+    }
 }
