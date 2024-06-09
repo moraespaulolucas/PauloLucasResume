@@ -14,6 +14,6 @@ main {
 
 @layer base {
     body {
-        @apply text-special-black bg-special-white
+        @apply text-special-black bg-special-white dark:text-special-white dark:bg-special-black
     }
 }
