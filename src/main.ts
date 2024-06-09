@@ -14,7 +14,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 class ChangeMainSection {
   @HostListener('wheel', ['$event'])
   handleEvent(e: WheelEvent) {
-      const scrollDirection = e.deltaY > 0 ? 'up' : 'down'
+      const scrollDirection = e.deltaY < 0 ? 'up' : 'down'
       console.log('going ' + scrollDirection)
   }
 }
